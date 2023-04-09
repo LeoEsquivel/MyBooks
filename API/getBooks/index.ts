@@ -1,17 +1,17 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
+import bookService from "../services/book.service";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-    context.log('HTTP trigger function processed a request.');
-    const name = (req.query.name || (req.body && req.body.name));
-    const responseMessage = name
-        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
+    let response;
 
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
+    try {
+        const result = await bookService.read();
+        response = { body: result, status: 200 };
+    } catch (error) {
+        response = { body: error.message, status: 500 };
+    }
 
+    context.res = response;
 };
 
 export default httpTrigger;
