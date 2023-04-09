@@ -6,7 +6,7 @@ name: Build and deploy Node.js project to Azure Function App - MyBooks-LDED
 on:
   push:
     branches:
-      - master
+      - api
   workflow_dispatch:
 
 env:
