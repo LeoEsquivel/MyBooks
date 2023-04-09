@@ -5,8 +5,8 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": [ "get" ],
-      "route": "book"
+      "methods": ["delete"],
+      "route": "editorial/{id}"
     },
     {
       "type": "http",
@@ -14,5 +14,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/getBooks/index.js"
+  "scriptFile": "../dist/deleteEditorial/index.js"
 }
