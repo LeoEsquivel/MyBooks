@@ -15,13 +15,20 @@ const authorService = {
             nombre: author.nombre,
             apellidos: author.apellidos
         });
-        
         author_.save();
         return author_;
     },
     async read(): Promise<IAuthor[]> {
         const authors = await Author.find();
         return authors;
+    },
+    async update(id:string, author: IAuthor) {
+        await Author.findByIdAndUpdate(id, author, { new: true });
+        return "Autor actualizado."
+    },
+    async delete(id:string) {
+        await Author.findByIdAndDelete(id);
+        return "Autor eliminado."
     }
 }
 
