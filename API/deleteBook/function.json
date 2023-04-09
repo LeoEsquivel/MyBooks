@@ -6,7 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": ["delete"],
-      "route": "book"
+      "route": "book/{id}"
     },
     {
       "type": "http",
