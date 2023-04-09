@@ -14,5 +14,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/getEditorial/index.js"
+  "scriptFile": "../dist/getEditorials/index.js"
 }
