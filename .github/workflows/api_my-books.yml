@@ -41,5 +41,5 @@ jobs:
           app-name: 'My-Books'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4712837C1BEC45B89D43AAA0457B1337 }}
-          MONGO_URI: ${{ secrets.MONGO_URI }}
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+
